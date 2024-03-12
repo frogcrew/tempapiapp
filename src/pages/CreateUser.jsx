@@ -1,9 +1,3 @@
-/**
- * @todo
- * - Create request for user input submission
- * - use crud crud POST request on endpoint with /user resource
- * - onSuccess new user creation, navigate user to the UserProfile route
- */
 import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,15 +5,10 @@ import axios from "axios";
 import { UserContext } from "../context/UserContext";
 import { apiMap } from "../utils/apiMapper";
 function CreateUser() {
-  // state variable that will hold my data
-  //   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [favorites, setFavorites] = useState([]);
   const navigate = useNavigate();
-  // Favorite button
-  // const [isFavorite, setIsFavorite] =useState(false);
-
   const { setUser } = useContext(UserContext);
   const handleInputChange = (event) => {
     setUsername(event.target.value);
@@ -72,9 +61,6 @@ function CreateUser() {
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <h3 className="hi-container"> HI THERE </h3>
-          {/* add onChange event and update the username state */}
-          {/* add name, id, placeholder attributes to your inputs */}
-          {/* add label tags to the inputs */}
           <input
             className="input"
             onChange={handleInputChange}
@@ -125,7 +111,6 @@ function CreateUser() {
         <Link to="/apis/cat" className="cats">
           Cats
         </Link>
-        {/* <Link to="/dictionary" className="dictionary"> Dictionary</Link> */}
       </div>
     </div>
   );
